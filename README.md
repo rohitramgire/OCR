@@ -1,4 +1,4 @@
-# OCR
+# Optical Character Recognition
 
 This project details a way to use Neural Networks to convert handwritten text to digital text and writing them to a file.
 
