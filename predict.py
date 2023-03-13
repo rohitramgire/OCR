@@ -79,11 +79,15 @@ class CharacterPredictor:
 
 
 if __name__ == "__main__":
-    root = os.getcwd()
-    # This is a demo of the usage of CharacterPredictor.
 
     
-    
+
+    root = os.getcwd()
+    if not os.path.exists(os.path.join(root,'extract_text')):
+        os.makedirs(os.path.join(root,'extract_text'))
+        os.makedirs(os.path.join(root,'extract_text_output'))
+        os.makedirs(os.path.join(root,'test'))
+
     for i in os.listdir(os.path.join(root,'test_images')):
 
         extract_text(i)
