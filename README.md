@@ -3,6 +3,7 @@
 ## Problem
 Text captured in images is very hard to query or analyse. OCR systems help in automating extraction of valuable information (that otherwise would be very manual). Making data accesible for computing opens a lot of doors to derive value.
 
+## Layout
 
 This project details a way to use a ResNet50 model to convert images of handwritten text to digital text and writing them to a text file.
 
