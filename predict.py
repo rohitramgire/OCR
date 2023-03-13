@@ -11,6 +11,9 @@ from torch.nn import Conv2d
 from torchvision.models import resnet50
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+import os  
+from skimage import io
+from extract_char import extract_text
 
 class CharacterPredictor:
     """Initialize a CharacterPredictor instance with a pretrained model
@@ -78,9 +81,7 @@ class CharacterPredictor:
 if __name__ == "__main__":
     root = os.getcwd()
     # This is a demo of the usage of CharacterPredictor.
-    import os  
-    from skimage import io
-    from extract_char import extract_text
+
     
     
     for i in os.listdir(os.path.join(root,'test_images')):
