@@ -33,6 +33,7 @@ class CharacterPredictor:
         # initialize model
         self.model = resnet50()
         self.model.conv1 = Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
+        ## using a pretrained model
         self.model.load_state_dict(load(model_path, map_location="cpu"))
         self.model.to(self.device)
 
@@ -83,6 +84,7 @@ if __name__ == "__main__":
     
 
     root = os.getcwd()
+    ## Creating necessary directories
     if not os.path.exists(os.path.join(root,'extract_text')):
         os.makedirs(os.path.join(root,'extract_text'))
         os.makedirs(os.path.join(root,'extract_text_output'))
