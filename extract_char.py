@@ -13,6 +13,10 @@ import matplotlib.pyplot as plt
 root = os.getcwd()
 
 def arrange_chars(gray,output,count):
+    """
+    Using connected components to find centroid of 
+    each character
+    """
     (numLabels, labels, stats, centroids) = output
     lst_centroid = []
     hashmap = {}
@@ -57,9 +61,7 @@ def arrange_chars(gray,output,count):
             new_image_height = 28
             color = (0,0,0)
             result = np.full((new_image_height,new_image_width,channels),color, dtype=np.uint8)
-            
-            
-    
+           
             # compute center offset
             x_center = (new_image_width - old_image_width) // 2
             y_center = (new_image_height - old_image_height) // 2
@@ -80,7 +82,11 @@ def arrange_chars(gray,output,count):
 
 
 
-def extract_text(file):    
+def extract_text(file):
+    """
+    Denoise images and using morphology (dilation)
+    and contour extraction, extract individual characters
+    """
 
     directory = os.listdir(os.path.join(root,'extract_text'))
     
